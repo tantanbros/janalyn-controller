@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.modelcontroller.HomeFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_Home_to_Patient"
+            app:destination="@id/PatientFragment" />
+        <action
+            android:id="@+id/action_Home_to_Simulation"
+            app:destination="@id/SimulationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PatientFragment"
+        android:name="com.example.modelcontroller.PatientFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_patient">
+        <action
+            android:id="@+id/action_Patient_to_Simulating"
+            app:destination="@id/SimulatingFragment" />
+        <action
+            android:id="@+id/action_Patient_to_Home"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SimulationFragment"
+        android:name="com.example.modelcontroller.SimulationFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_simulation">
+        <action
+            android:id="@+id/action_Simulation_to_Simulating"
+            app:destination="@id/SimulatingFragment" />
+        <action
+            android:id="@+id/action_Simulation_to_Home"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SimulatingFragment"
+        android:name="com.example.modelcontroller.SimulatingFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_simulating">
+        <action
+            android:id="@+id/action_Simulating_to_Simulated"
+            app:destination="@id/SimulatedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SimulatedFragment"
+        android:name="com.example.modelcontroller.SimulatedFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_simulated">
+        <action
+            android:id="@+id/action_Simulated_to_Home"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+
+
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.modelcontroller.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.modelcontroller.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+</navigation>
